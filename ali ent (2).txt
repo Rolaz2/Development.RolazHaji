@@ -1,0 +1,36 @@
+code segment
+    Assume CS:code
+    start: mov AX,4000H
+           mov DS,AX
+           mov SI,2000H
+           mov CX,0004H 
+           mov BL ,00H
+           mov BH ,00H
+           
+           
+           
+           mov [2000H],0 2H  
+           mov [2001H],0 5H
+           mov [2002H],0 7H
+           mov [2003H],0 9H 
+           
+           
+           
+           mov AL,0 0H
+      
+      
+      
+      
+     back:CMP AL,[SI]
+         ROR AL,1
+        JC odd  
+        INC BL
+        JMP Next
+        odd: INC BH
+        Next:INC SI
+        Loop Back
+        mov [SI],BX
+        code ends
+end Start
+    
+         
